@@ -1,0 +1,20 @@
+<table class=" table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>RegionId</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dataItem of StationsList">
+      <td> {{dataItem.Id}}</td>
+      <td>{{dataItem.Name}}</td>
+      <td>{{dataItem.Latitude}}</td>
+      <td>{{dataItem.Longitude}}</td>
+      <td>{{dataItem.RegionId}}</td>
+    </tr>
+  </tbody>
+</table>

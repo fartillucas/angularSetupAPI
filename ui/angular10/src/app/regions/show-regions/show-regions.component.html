@@ -1,0 +1,28 @@
+<table class=" table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Stations</th>
+      <th>Subscriptions</th>
+      <th>AlarmItems</th>
+      <th>Factor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dataItem of RegionsList">
+      <td> {{dataItem.Id}}</td>
+      <td>{{dataItem.Name}}</td>
+      <td>{{dataItem.Latitude}}</td>
+      <td>{{dataItem.Longitude}}</td>
+      <td>{{dataItem.Stations}}</td>
+      <td>{{dataItem.Subscriptions}}</td>
+      <td>{{dataItem.AlarmItems}}</td>
+      <td>{{dataItem.Factor}}</td>
+    </tr>
+  </tbody>
+
+
+</table>
