@@ -10,10 +10,7 @@ import { ShowRegionsComponent } from './regions/show-regions/show-regions.compon
 import { SharedService } from './shared.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AlarmsComponent } from './alarms/alarms.component';
-import { ShowAlarmsComponent } from './alarms/show-alarms/show-alarms.component';
-import { ForecastsComponent } from './forecasts/forecasts.component';
-import { ShowForecastsComponent } from './forecasts/show-forecasts/show-forecasts.component';
+
 
 
 @NgModule({
@@ -23,10 +20,7 @@ import { ShowForecastsComponent } from './forecasts/show-forecasts/show-forecast
     ShowStationsComponent,
     RegionsComponent,
     ShowRegionsComponent,
-    AlarmsComponent,
-    ShowAlarmsComponent,
-    ForecastsComponent,
-    ShowForecastsComponent,
+
 
   ],
   imports: [

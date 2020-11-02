@@ -15,7 +15,7 @@ namespace WebApplication1.Controllers
 
         public HttpResponseMessage GetStations()
         {
-            string query = @"select * from stations";
+            string query = @"select Name, Id, RegionId from stations order by RegionId";
             DataTable table = new DataTable();
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Akcentralen"].ConnectionString))
             using (var cmd = new SqlCommand(query, con))

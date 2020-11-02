@@ -14,7 +14,7 @@ namespace WebApplication1.Controllers
     {
         public HttpResponseMessage GetRegions()
         {
-            string query = @"select * from Regions";
+            string query = @"select Name from Regions";
             DataTable table1 = new DataTable();
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Akcentralen"].ConnectionString))
             using (var cmd = new SqlCommand(query, con))
