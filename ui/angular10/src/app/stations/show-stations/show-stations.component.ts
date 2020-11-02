@@ -11,7 +11,6 @@ export class ShowStationsComponent implements OnInit {
   StationsList: any = [];
   Item: any = [];
   CustomList: any[];
-  userId: number;
 
 
   constructor(private service: SharedService) { }
@@ -26,7 +25,6 @@ export class ShowStationsComponent implements OnInit {
 
   public openModal(Item) {
     this.CustomList = Item;
-    console.log(this.CustomList);
   }
 
   refreshStaList() {
