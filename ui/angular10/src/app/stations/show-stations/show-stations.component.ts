@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/shared.service';
-import { Console } from 'console';
 
 @Component({
   selector: 'app-show-stations',
@@ -10,7 +9,7 @@ import { Console } from 'console';
 export class ShowStationsComponent implements OnInit {
   StationsList: any = [];
   Item: any = [];
-  CustomList: any[];
+  CustomList: any = [];
 
 
   constructor(private service: SharedService) { }
