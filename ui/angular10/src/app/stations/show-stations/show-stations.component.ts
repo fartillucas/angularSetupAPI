@@ -8,22 +8,25 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class ShowStationsComponent implements OnInit {
   StationsList: any = [];
+  ForecastList: any = [];
   Item: any = [];
+  ModalList: any = [];
   CustomList: any = [];
-
+  Id: any = 0;
 
   constructor(private service: SharedService) { }
   station: any;
 
   ngOnInit(): void {
     this.refreshStaList();
-  }
-  contactInfo(id) {
-    this.service.getStaList()
-  }
 
-  public openModal(Item) {
-    this.CustomList = Item;
+  }
+  public openModal(Item, List) {
+    this.CustomList = List;
+    this.Id = Item;
+    console.log(this.CustomList)
+    console.log(this.Id)
+
   }
 
   refreshStaList() {

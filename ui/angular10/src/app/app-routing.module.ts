@@ -8,9 +8,6 @@ const routes: Routes = [
   { path: 'region', component: RegionsComponent },
   { path: 'station', component: StationsComponent },
 
-
-
-
 ];
 
 @NgModule({

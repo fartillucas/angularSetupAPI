@@ -12,5 +12,12 @@ namespace WebApplication1.Models
         public decimal Latitude { get; set; }
         public decimal Longtitude { get; set; }
         public int RegionId { get; set; }
+        public DateTime Date { get; set; }
+        public string StationId { get; set; }
+        public decimal TempMean { get; set; }
+        public int Humidity { get; set; }
+        public decimal Pressure { get; set; }
+        public decimal TempMin { get; set; }
+        public decimal TempMax { get; set; }
     }
 }

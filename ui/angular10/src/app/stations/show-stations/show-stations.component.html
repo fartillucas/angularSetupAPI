@@ -1,7 +1,6 @@
 <table class=" table table-striped">
   <thead>
     <tr>
-      <th>#</th>
       <th>Name</th>
       <th>RegionId</th>
       <th>Id</th>
@@ -10,12 +9,11 @@
   </thead>
   <tbody>
     <tr *ngFor="let dataItem of StationsList; index as i">
-      <th scope="row">{{ i + 1 }}</th>
-      <td>{{dataItem.Name}}</td>
-      <td>{{dataItem.RegionId}}</td>
-      <td>{{dataItem.Id}}</td>
-      <td>
-        <button type="button" class="btn btn-primary float-left m-2" (click)="openModal(dataItem)" data-toggle="modal" data-target="#exampleModal"
+      <td *ngIf="(dataItem.ForecastDay == 1)">{{dataItem.Name}}</td>
+      <td *ngIf="(dataItem.ForecastDay == 1)">{{dataItem.RegionId}}</td>
+      <td *ngIf="(dataItem.ForecastDay == 1)">{{dataItem.Id}}</td>
+      <td *ngIf="(dataItem.ForecastDay == 1)">
+        <button *ngIf="(dataItem.ForecastDay == 1)" type="button" class="btn btn-primary float-left m-2" (click)="openModal(dataItem.Id, StationsList)" data-toggle="modal" data-target="#exampleModal"
                 data-backdrop="static" data-keyboard="false" value={{i}}>
           Details
         </button>
@@ -24,16 +22,51 @@
   </tbody>
 </table>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">7 Day Forecast</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-content">
-        {{CustomList.Id}}
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Days ahead</th>
+              <th>Name</th>
+              <th>Min temp</th>
+              <th>Mean temp</th>
+              <th>Max temp</th>
+              <th>Humidity</th>
+              <th>Pressure</th>
+            </tr>
+          </thead>
+          <tr *ngFor="let dataItem of CustomList;">
+            <td *ngIf="(dataItem.StationId == Id)">
+              {{dataItem.ForecastDay}}
+            </td>
+            <td *ngIf="(dataItem.StationId == Id)">
+              {{dataItem.Name}}
+            </td>
+            <td *ngIf="(dataItem.StationId == Id)">
+              {{dataItem.TempMin}} &#8451;
+            </td>
+            <td *ngIf="(dataItem.StationId == Id)">
+              {{dataItem.TempMean}} &#8451;
+            </td>
+            <td *ngIf="(dataItem.StationId == Id)">
+              {{dataItem.TempMax}} &#8451;
+            </td>
+            <td *ngIf="(dataItem.StationId == Id)">
+              {{dataItem.Humidity}} %
+            </td>
+            <td *ngIf="(dataItem.StationId == Id)">
+              {{dataItem.Pressure}} %
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
   </div>
