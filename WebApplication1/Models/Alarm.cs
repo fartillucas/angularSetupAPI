@@ -6,11 +6,11 @@ using System.Web;
 
 namespace WebApplication1.Models
 {
-    public class AlarmPressure
+    public class Alarms
     {
         public DateTime Date { get; set; }
         public string StationId { get; set; }
-        public int Alarms { get; set; }
+        public int Alarm { get; set; }
 
 
     }

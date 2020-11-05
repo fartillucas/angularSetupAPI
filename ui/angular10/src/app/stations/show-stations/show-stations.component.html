@@ -34,18 +34,20 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>Days ahead</th>
+              <th>Day of forecast</th>
               <th>Name</th>
               <th>Min temp</th>
               <th>Mean temp</th>
               <th>Max temp</th>
               <th>Humidity</th>
               <th>Pressure</th>
+              <th>Alarms</th>
+
             </tr>
           </thead>
           <tr *ngFor="let dataItem of CustomList;">
             <td *ngIf="(dataItem.StationId == Id)">
-              {{dataItem.ForecastDay}}
+              {{dayAhead}}
             </td>
             <td *ngIf="(dataItem.StationId == Id)">
               {{dataItem.Name}}
@@ -63,7 +65,7 @@
               {{dataItem.Humidity}} %
             </td>
             <td *ngIf="(dataItem.StationId == Id)">
-              {{dataItem.Pressure}} %
+              {{dataItem.Pressure}}
             </td>
           </tr>
         </table>

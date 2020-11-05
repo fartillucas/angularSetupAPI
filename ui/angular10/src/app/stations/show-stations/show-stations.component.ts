@@ -13,9 +13,8 @@ export class ShowStationsComponent implements OnInit {
   ModalList: any = [];
   CustomList: any = [];
   Id: any = 0;
-
+  dayAhead: Date = new Date;
   constructor(private service: SharedService) { }
-  station: any;
 
   ngOnInit(): void {
     this.refreshStaList();
@@ -24,14 +23,17 @@ export class ShowStationsComponent implements OnInit {
   public openModal(Item, List) {
     this.CustomList = List;
     this.Id = Item;
-    console.log(this.CustomList)
-    console.log(this.Id)
+    //console.log(this.CustomList)
+    //console.log(this.Id)
 
   }
 
   refreshStaList() {
     this.service.getStaList().subscribe(data => {
       this.StationsList = data;
+      //console.log(this.CustomList)
+      //console.log(this.StationsList)
+
     })
   }
 

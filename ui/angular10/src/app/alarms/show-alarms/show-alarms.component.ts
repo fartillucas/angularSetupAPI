@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/shared.service';
+
 
 @Component({
   selector: 'app-show-alarms',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowAlarmsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: SharedService) { }
+  AlarmList: any = []
 
   ngOnInit(): void {
+    this.refreshAlaList();
+  }
+  refreshAlaList() {
+    this.service.getAlaList().subscribe(data => {
+      this.AlarmList = data;
+      console.log(this.AlarmList)
+
+    })
   }
 
 }

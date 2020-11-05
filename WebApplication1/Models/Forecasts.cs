@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WebApplication1.Models
 {
-    public class Forecast
+    public class Forecasts
     {
         public DateTime Date { get; set; }
         public string StationId { get; set; }

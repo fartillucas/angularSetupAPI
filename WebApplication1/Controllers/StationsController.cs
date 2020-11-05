@@ -15,7 +15,7 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public HttpResponseMessage GetStations()
         {
-            string query = @"SELECT Date, StationId, TempMean, Pressure, Humidity, TempMin, TempMax, ForecastDay,Name, Id, RegionId FROM ForecastsFromArima JOIN (SELECT Name, Id, RegionId FROM Stations) as Stations on Stations.Id = ForecastsFromArima.StationId Order by Stations.RegionId";
+            string query = @"SELECT Date, StationId, ForecastDay, TempMean, Humidity, Pressure, TempMin, TempMax, Name, Id, RegionId FROM ForecastsFromArima JOIN (SELECT Name, Id, RegionId FROM Stations) as Stations on Stations.Id = ForecastsFromArima.StationId Order by Stations.RegionId";
             DataTable tableStations = new DataTable();
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Akcentralen"].ConnectionString))
             using (var cmd = new SqlCommand(query, con))

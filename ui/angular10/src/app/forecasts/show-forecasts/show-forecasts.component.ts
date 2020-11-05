@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/shared.service';
+
 
 @Component({
   selector: 'app-show-forecasts',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowForecastsComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private service: SharedService) { }
+  ForecastList: any = [];
 
   ngOnInit(): void {
+    this.refreshForList();
   }
-
+  refreshForList() {
+    this.service.getForList().subscribe(data => {
+      this.ForecastList = data;
+    })
+  }
 }

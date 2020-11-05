@@ -19,6 +19,9 @@ export class ShowRegionsComponent implements OnInit {
   refreshRegList() {
     this.service.getRegList().subscribe(data => {
       this.RegionsList = data;
+
+      console.log(this.RegionsList)
+
     })
   }
 }

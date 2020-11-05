@@ -161,8 +161,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\AlarmController.cs" />
-    <Compile Include="Controllers\ForecastController.cs" />
+    <Compile Include="Controllers\AlarmsController.cs" />
+    <Compile Include="Controllers\ForecastsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegionsController.cs" />
     <Compile Include="Controllers\StationsController.cs" />
@@ -170,8 +170,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AlarmPressure.cs" />
-    <Compile Include="Models\Forecast.cs" />
+    <Compile Include="Models\Alarm.cs" />
+    <Compile Include="Models\Forecasts.cs" />
     <Compile Include="Models\Regions.cs" />
     <Compile Include="Models\Stations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

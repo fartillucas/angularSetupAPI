@@ -17,10 +17,10 @@ export class SharedService {
     return this.http.get<any>(this.APIUrl + '/stations');
   }
   getAlaList(): Observable<any[]> {
-    return this.http.get<any>(this.APIUrl + '/alarm');
+    return this.http.get<any>(this.APIUrl + '/alarms');
   }
   getForList(): Observable<any[]> {
-    return this.http.get<any>(this.APIUrl + '/forecast');
+    return this.http.get<any>(this.APIUrl + '/forecasts');
   }
 
 }

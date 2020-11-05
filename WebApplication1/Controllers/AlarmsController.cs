@@ -10,11 +10,12 @@ using System.Web.Http;
 
 namespace WebApplication1.Controllers
 {
-    public class ForecastController : ApiController
+    public class AlarmsController : ApiController
     {
-        public HttpResponseMessage GetForecast()
+        [HttpGet]
+        public HttpResponseMessage GetAlarms()
         {
-            string query = @"select * from ForecastsFromArima";
+            string query = @"select * from AlarmPressureByStation";
             DataTable table = new DataTable();
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Akcentralen"].ConnectionString))
             using (var cmd = new SqlCommand(query, con))
