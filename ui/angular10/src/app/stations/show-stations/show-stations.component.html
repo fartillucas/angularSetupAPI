@@ -47,7 +47,7 @@
           </thead>
           <tr *ngFor="let dataItem of CustomList;">
             <td *ngIf="(dataItem.StationId == Id)">
-              {{dayAhead}}
+              {{updateDate(dataItem.ForecastDay)}}
             </td>
             <td *ngIf="(dataItem.StationId == Id)">
               {{dataItem.Name}}
