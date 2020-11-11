@@ -1,0 +1,45 @@
+<div class="container" ng-controller="AlarmsController">
+  <h3 class="d-flex justify-content-center">Alarm pressure for each region</h3>
+  <table class=" table table-striped">
+    <thead>
+      <tr>
+        <th>Date for predicted alarm pressure</th>
+        <th>Alarms for the region</th>
+        <th>
+          <div class="d-flex flex-row">
+            <input [(ngModel)]="RegionIdFilter" class="form-control"
+                   (keyup)="FilterFn()" placeholder="Filter">
+
+          </div>
+          Region Id
+        </th>
+        <th>
+          <div class="d-flex flex-row">
+            <input [(ngModel)]="RegionNameFilter" class="form-control"
+                   (keyup)="FilterFn()" placeholder="Filter">
+
+          </div>
+          Region Name
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dataItem of AlarmRegionList">
+        <td>
+          {{dataItem.Date | date: 'yyyy-MM-dd' }}
+        </td>
+        <td>
+          {{dataItem.Alarms}}
+        </td>
+        <td>
+          {{dataItem.RegionId}}
+        </td>
+        <td>
+          {{dataItem.Name}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="container" ng-controller="RegionsController"></div>
+

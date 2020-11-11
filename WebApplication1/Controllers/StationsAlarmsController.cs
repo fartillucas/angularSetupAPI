@@ -7,15 +7,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-
 namespace WebApplication1.Controllers
 {
-    public class AlarmsController : ApiController
+    public class StationsAlarmsController : ApiController
     {
         [HttpGet]
-        public HttpResponseMessage GetAlarms()
+        public HttpResponseMessage GetStationsAlarms()
         {
-            string query = @"SELECT Date, SUM(Alarms) AS SumAlarms FROM AlarmPressureByStation GROUP BY Date";
+            string query = @"SELECT StationId, Station.Name, Date, Alarms FROM AlarmPressureByStation JOIN (SELECt Name, id From Stations) as Station on Station.Id = AlarmPressureByStation.StationId";
             DataTable table = new DataTable();
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Akcentralen"].ConnectionString))
             using (var cmd = new SqlCommand(query, con))

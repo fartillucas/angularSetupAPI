@@ -14,6 +14,13 @@ import { ForecastsComponent } from './forecasts/forecasts.component';
 import { ShowForecastsComponent } from './forecasts/show-forecasts/show-forecasts.component';
 import { AlarmsComponent } from './alarms/alarms.component';
 import { ShowAlarmsComponent } from './alarms/show-alarms/show-alarms.component';
+import { AlarmsRegionComponent } from './alarms-region/alarms-region.component';
+import { AlarmsStationComponent } from './alarms-station/alarms-station.component';
+import { ShowAlarmsRegionComponent } from './alarms-region/show-alarms-region/show-alarms-region.component';
+import { ShowAlarmsStationComponent } from './alarms-station/show-alarms-station/show-alarms-station.component';
+
+
+
 
 
 
@@ -28,6 +35,11 @@ import { ShowAlarmsComponent } from './alarms/show-alarms/show-alarms.component'
     ShowForecastsComponent,
     AlarmsComponent,
     ShowAlarmsComponent,
+    AlarmsRegionComponent,
+    AlarmsStationComponent,
+    ShowAlarmsStationComponent,
+    ShowAlarmsRegionComponent,
+
 
 
   ],

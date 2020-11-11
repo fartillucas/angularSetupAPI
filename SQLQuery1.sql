@@ -1,0 +1,1 @@
+﻿SELECT distinct StationId, Date, Alarms  FROM AlarmPressureByStation

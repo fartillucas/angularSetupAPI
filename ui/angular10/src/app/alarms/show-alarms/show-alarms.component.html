@@ -1,5 +1,5 @@
-<div class="container">
-  <h3 class="d-flex justify-content-center">Alarm Pressure for denmark</h3>
+<div class="container" ng-controller="AlarmsController">
+  <h3 class="d-flex justify-content-center">Total alarm pressure for Denmark</h3>
   <table class=" table table-striped">
     <thead>
       <tr>
@@ -11,48 +11,11 @@
       <tr *ngFor="let dataItem of AlarmList">
         <td>{{dataItem.Date | date: 'yyyy-MM-dd' }}</td>
         <td>
-          {{dataItem.Alarms}}
+          {{dataItem.SumAlarms}}
         </td>
       </tr>
     </tbody>
   </table>
 </div>
-<div class="container">
-  <h3 class="d-flex justify-content-center">Alarm By Regions</h3>
-  <table class=" table table-striped">
-    <thead>
-      <tr>
-        <th>Date for predicted alarm pressure</th>
-        <th>Region ID</th>
-        <th>Alarms </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let dataItem of AlarmList">
-        <td>{{dataItem.Date | date: 'yyyy-MM-dd' }}</td>
-        <td>{{dataItem.StationId}}</td>
-        <td>{{dataItem.Alarms}}</td>
+<div class="container" ng-controller="RegionsController"></div>
 
-      </tr>
-    </tbody>
-  </table>
-</div>
-<div class="container">
-  <h3 class="d-flex justify-content-center">Alarm By Stations</h3>
-  <table class=" table table-striped">
-    <thead>
-      <tr>
-        <th>Date for predicted alarm pressure</th>
-        <th>Station ID</th>
-        <th>Alarms</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let dataItem of AlarmList">
-        <td>{{dataItem.Date | date: 'yyyy-MM-dd' }}</td>
-        <td>{{dataItem.StationId}}</td>
-        <td>{{dataItem.Alarms}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>

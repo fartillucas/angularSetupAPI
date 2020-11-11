@@ -164,7 +164,9 @@
     <Compile Include="Controllers\AlarmsController.cs" />
     <Compile Include="Controllers\ForecastsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RegionsAlarmsController.cs" />
     <Compile Include="Controllers\RegionsController.cs" />
+    <Compile Include="Controllers\StationsAlarmsController.cs" />
     <Compile Include="Controllers\StationsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">

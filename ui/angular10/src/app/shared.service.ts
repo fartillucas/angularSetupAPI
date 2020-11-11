@@ -22,5 +22,11 @@ export class SharedService {
   getForList(): Observable<any[]> {
     return this.http.get<any>(this.APIUrl + '/forecasts');
   }
+  getAlaRegList(): Observable<any[]> {
+    return this.http.get<any>(this.APIUrl + '/regionsAlarms');
+  }
+  getAlaStaList(): Observable<any[]> {
+    return this.http.get<any>(this.APIUrl + '/stationsAlarms');
+  }
 
 }
