@@ -15,7 +15,8 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public HttpResponseMessage GetStations()
         {
-            string query = @"SELECT Date, StationId, ForecastDay, TempMean, Humidity, Pressure, TempMin, TempMax, Name, Id, RegionId FROM ForecastsFromArima JOIN (SELECT Name, Id, RegionId FROM Stations) as Stations on Stations.Id = ForecastsFromArima.StationId Order by Stations.RegionId";
+            string query = @"SELECT Date, StationId, ForecastDay, TempMean, Humidity, Pressure, TempMin, TempMax, Name, Id, RegionId FROM ForecastsFromArima JOIN (SELECT Name, Id, RegionId FROM Stations) as Stations on Stations.Id = ForecastsFromArima.StationId where ForecastsFromArima.Date =(select MAX(Date) as Date from ForecastsFromArima) Order by Stations.RegionId
+";
             DataTable tableStations = new DataTable();
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Akcentralen"].ConnectionString))
             using (var cmd = new SqlCommand(query, con))
@@ -27,6 +28,6 @@ namespace WebApplication1.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, tableStations);
         }
 
-       
+
     }
 }

@@ -12,6 +12,14 @@ export class ShowForecastsComponent implements OnInit {
 
   constructor(private service: SharedService) { }
   ForecastList: any = [];
+  k: any = 0;
+
+  updateDate(k) {
+    var day1 = new Date();
+    day1.setDate(day1.getDate() + k);
+    console.log(k)
+    return day1.toISOString().slice(0, 10);
+  }
 
   ngOnInit(): void {
     this.refreshForList();
@@ -19,6 +27,7 @@ export class ShowForecastsComponent implements OnInit {
   refreshForList() {
     this.service.getForList().subscribe(data => {
       this.ForecastList = data;
+      console.log(this.ForecastList)
     })
   }
 }
