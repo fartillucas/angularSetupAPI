@@ -28,5 +28,9 @@ export class SharedService {
   getAlaStaList(): Observable<any[]> {
     return this.http.get<any>(this.APIUrl + '/stationsAlarms');
   }
+  getDateOfUpdateList(): Observable<any[]> {
+    return this.http.get<any>(this.APIUrl + '/forecasts');
+  }
+
 
 }
