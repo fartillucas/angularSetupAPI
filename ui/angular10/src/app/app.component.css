@@ -1,4 +1,31 @@
 .active-list-item {
-  background-color: green !important; /* Note: You could also use a custom theme */
-  color: red !important;
+  background-color: #0a5796; /* Note: You could also use a custom theme */
+  color: #fff !important;
+}
+
+button {
+  border-color: #0a5796;
+  color: #0a5796;
+}
+
+  button:hover {
+    background-color: #0a5796;
+  }
+
+.logo {
+  text-align: center !important;
+}
+
+.bg-light {
+  background: rgb(201,197,198);
+  background: linear-gradient(90deg, rgba(201,197,198,1) 0%, rgba(251,249,250,1) 50%, rgba(251,249,250,1) 50%, rgba(201,197,198,1) 100%);
+}
+
+.headerWithLogo {
+  background: rgb(201,197,198);
+  background: linear-gradient(90deg, rgba(201,197,198,1) 0%, rgba(251,249,250,1) 50%, rgba(251,249,250,1) 50%, rgba(201,197,198,1) 100%);
+}
+
+#header2 {
+  margin-bottom: 0px;
 }

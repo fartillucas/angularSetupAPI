@@ -1,5 +1,5 @@
 <table class=" table table-striped">
-  <thead>
+  <thead class="stationHeader">
     <tr>
       <th>
         <div class="d-flex flex-row">
@@ -7,14 +7,14 @@
                  (keyup)="FilterFn()" placeholder="Filter">
 
         </div>
-        Name
+        Station name
       </th>
       <th>
         <div class="d-flex flex-row">
           <input [(ngModel)]="StationRegionFilter" class="form-control"
                  (keyup)="FilterFn()" placeholder="Filter">
         </div>
-        RegionId
+        Affiliated RegionId
       </th>
       <th>
         <div class="d-flex flex-row">
@@ -23,7 +23,7 @@
         </div>
         Station Id
       </th>
-      <th>Details</th>
+      <th>Forecast details</th>
     </tr>
   </thead>
   <tbody>
@@ -32,6 +32,7 @@
       <td *ngIf="(dataItem.ForecastDay == 1)">{{dataItem.RegionId}}</td>
       <td *ngIf="(dataItem.ForecastDay == 1)">{{dataItem.Id}}</td>
       <td *ngIf="(dataItem.ForecastDay == 1)">
+
         <button *ngIf="(dataItem.ForecastDay == 1)" type="button" class="btn btn-primary float-left m-2" (click)="openModal(dataItem.Id, StationsList)" data-toggle="modal" data-target="#exampleModal"
                 data-backdrop="static" data-keyboard="false" value={{i}}>
           Details
@@ -53,11 +54,11 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>Day of forecast</th>
-              <th>Name</th>
-              <th>Min temp</th>
-              <th>Mean temp</th>
-              <th>Max temp</th>
+              <th>Date of forecast</th>
+              <th>Station name</th>
+              <th>Minimum temp</th>
+              <th>Avarage temp</th>
+              <th>Maximum temp</th>
               <th>Humidity</th>
               <th>Pressure</th>
             </tr>

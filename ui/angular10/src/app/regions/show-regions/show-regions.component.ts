@@ -23,11 +23,18 @@ export class ShowRegionsComponent implements OnInit {
   public openModal(Item, List) {
     this.CustomList = List;
     this.Id = Item;
+
     //console.log(this.CustomList)
     //console.log(this.Id)
     console.log(this.CustomList)
 
 
+  }
+  updateDate(k) {
+    var day1 = new Date();
+    day1.setDate(day1.getDate() + k);
+    console.log(k)
+    return day1.toISOString().slice(0, 10);
   }
 
   refreshRegList() {

@@ -1,0 +1,22 @@
+.forecastHeader {
+  background: rgb(201,197,198);
+  background: linear-gradient(90deg, rgba(201,197,198,1) 0%, rgba(251,249,250,1) 50%, rgba(251,249,250,1) 50%, rgba(201,197,198,1) 100%);
+}
+
+.table th {
+  padding: .75rem;
+  vertical-align: top;
+  border-top: 0px;
+  border-bottom: 0;
+}
+
+th {
+  color: #444444;
+  font-weight: 600;
+  font-family: "Open Sans", Arial, Tahoma, sans-serif;
+  font-size: 16px;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+  background-color: #C9C5C6;
+}
