@@ -14,7 +14,7 @@ namespace WebApplication1.Controllers
     {
         public HttpResponseMessage GetForecasts()
         {
-            string query = @"select * from ForecastsFromArima";
+            string query = @"select * from ForecastsFromArima where date = (select MAX(Date) from ForecastsFromArima)";
             DataTable table = new DataTable();
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Akcentralen"].ConnectionString))
             using (var cmd = new SqlCommand(query, con))

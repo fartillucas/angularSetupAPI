@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   }
   constructor(private service: SharedService) { }
   updateList: any = [];
-  k = 1;
+  k = 0;
 
   yesterday(k) {
     var day1 = new Date();
@@ -36,8 +36,9 @@ export class AppComponent implements OnInit {
   refreshDate() {
     this.service.getDateOfUpdateList().subscribe(data => {
       this.updateList = data;
-      if (this.updateList[0].Date.toString().split("T00:00:00")[0] == this.yesterday(1)) {
+      if (this.updateList[0].Date.toString().split("T00:00:00")[0] == this.yesterday(0)) {
         document.getElementById("timeCheck").style.backgroundColor = "#4CAF50";
+
       } else {
         document.getElementById("timeCheck").style.backgroundColor = "#ff0000";
 
