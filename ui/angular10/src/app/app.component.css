@@ -29,3 +29,17 @@ button {
 #header2 {
   margin-bottom: 0px;
 }
+
+.container-fluid {
+  padding: 0px;
+}
+
+.dot {
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 36%;
+  top: 11px;
+}
