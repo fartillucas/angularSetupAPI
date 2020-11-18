@@ -31,6 +31,9 @@ export class SharedService {
   getDateOfUpdateList(): Observable<any[]> {
     return this.http.get<any>(this.APIUrl + '/forecasts');
   }
+  getChartDataSet(): Observable<any[]> {
+    return this.http.get<any>(this.APIUrl + '/Alarms');
+  }
 
 
 }

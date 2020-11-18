@@ -18,6 +18,9 @@ import { AlarmsRegionComponent } from './alarms-region/alarms-region.component';
 import { AlarmsStationComponent } from './alarms-station/alarms-station.component';
 import { ShowAlarmsRegionComponent } from './alarms-region/show-alarms-region/show-alarms-region.component';
 import { ShowAlarmsStationComponent } from './alarms-station/show-alarms-station/show-alarms-station.component';
+import { ChartsModule } from 'ng2-charts';
+import { GraphComponent } from './graph/graph.component';
+import { ShowGraphComponent } from './graph/show-graph/show-graph.component';
 
 
 
@@ -26,6 +29,7 @@ import { ShowAlarmsStationComponent } from './alarms-station/show-alarms-station
 
 @NgModule({
   declarations: [
+    ChartsModule,
     AppComponent,
     StationsComponent,
     ShowStationsComponent,
@@ -39,11 +43,14 @@ import { ShowAlarmsStationComponent } from './alarms-station/show-alarms-station
     AlarmsStationComponent,
     ShowAlarmsStationComponent,
     ShowAlarmsRegionComponent,
+    GraphComponent,
+    ShowGraphComponent,
 
 
 
   ],
   imports: [
+    ChartsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
