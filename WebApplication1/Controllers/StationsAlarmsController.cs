@@ -14,7 +14,7 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public HttpResponseMessage GetStationsAlarms()
         {
-            string query = @"SELECT StationId, Station.Name, Date, Alarms FROM AlarmPressureByStation JOIN (SELECt Name, id From Stations) as Station on Station.Id = AlarmPressureByStation.StationId";
+            string query = @"SELECT StationId, Station.Name, Date, Alarms FROM AlarmPressureByStation JOIN (SELECt Name, id From Stations) as Station on Station.Id = AlarmPressureByStation.StationId where DayOfPrediction = (select MAX(DayOfPrediction)from AlarmPressureByStation)";
             DataTable table = new DataTable();
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Akcentralen"].ConnectionString))
             using (var cmd = new SqlCommand(query, con))

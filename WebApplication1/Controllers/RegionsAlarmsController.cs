@@ -15,7 +15,7 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public HttpResponseMessage GetStationsAlarms()
         {
-            string query = @"SELECT SUM(ALARMS) as Alarms, Date, Region.RegionId, RegionName.Name FROm AlarmPressureByStation JOIN (SELECT DISTINCT RegionID, StationId FROM Subscriptions) as Region on Region.StationId = AlarmPressureByStation.StationId  JOIN (SELECT Name, Id From Regions) as RegionName on RegionName.Id = Region.RegionId Group by Region.RegionId, Date, RegionName.Name Order by Region.RegionId, Date";
+            string query = @"SELECT SUM(ALARMS) as Alarms, Date, Region.RegionId, RegionName.Name FROm AlarmPressureByStation JOIN (SELECT DISTINCT RegionID, StationId FROM Subscriptions) as Region on Region.StationId = AlarmPressureByStation.StationId  JOIN (SELECT Name, Id From Regions) as RegionName on RegionName.Id = Region.RegionId where DayOfPrediction = (select MAX(DayOfPrediction)from AlarmPressureByStation) Group by Region.RegionId, Date, RegionName.Name Order by Region.RegionId, Date";
             DataTable table = new DataTable();
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Akcentralen"].ConnectionString))
             using (var cmd = new SqlCommand(query, con))

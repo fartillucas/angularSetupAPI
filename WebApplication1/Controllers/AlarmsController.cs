@@ -15,7 +15,7 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public HttpResponseMessage GetAlarms()
         {
-            string query = @"SELECT Date, SUM(Alarms) AS SumAlarms FROM AlarmPressureByStation GROUP BY Date";
+            string query = @"SELECT Date, SUM(Alarms) AS SumAlarms FROM AlarmPressureByStation WHERE DayOfPrediction = (select MAX(DayOfPrediction) from AlarmPressureByStation) GROUP BY Date";
             DataTable table = new DataTable();
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Akcentralen"].ConnectionString))
             using (var cmd = new SqlCommand(query, con))
