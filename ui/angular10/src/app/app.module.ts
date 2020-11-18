@@ -29,7 +29,6 @@ import { ShowGraphComponent } from './graph/show-graph/show-graph.component';
 
 @NgModule({
   declarations: [
-    ChartsModule,
     AppComponent,
     StationsComponent,
     ShowStationsComponent,

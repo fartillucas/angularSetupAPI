@@ -1,1 +1,15 @@
-<p>show-graph works!</p>
+<div class="chartjs-container">
+  <canvas baseChart
+          height="600"
+          width="1400"
+          [datasets]="lineChartData"
+          [labels]="lineChartLabels"
+          [options]="lineChartOptions"
+          [colors]="lineChartColors"
+          [legend]="lineChartLegend"
+          [chartType]="lineChartType"
+          [plugins]="lineChartPlugins"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)">
+  </canvas>
+</div>

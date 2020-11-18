@@ -6,6 +6,7 @@ import { ForecastsComponent } from './forecasts/forecasts.component';
 import { AlarmsComponent } from './alarms/alarms.component';
 import { AlarmsRegionComponent } from './alarms-region/alarms-region.component';
 import { AlarmsStationComponent } from './alarms-station/alarms-station.component';
+import { GraphComponent } from './graph/graph.component';
 
 
 
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'alarm', component: AlarmsComponent },
   { path: 'alarmsregion', component: AlarmsRegionComponent },
   { path: 'alarmsstation', component: AlarmsStationComponent },
+  { path: 'graph', component: GraphComponent },
 
 ];
 
