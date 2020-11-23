@@ -35,5 +35,9 @@ export class SharedService {
     return this.http.get<any>(this.APIUrl + '/Alarms');
   }
 
+  getChartDataSetSecondary(): Observable<any[]> {
+    return this.http.get<any>(this.APIUrl + '/Graphs');
+  }
+
 
 }
